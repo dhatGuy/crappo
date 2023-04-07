@@ -3,7 +3,7 @@ import Button from "../Button";
 function Rate() {
   return (
     <section className="py-28 relative">
-      <div className="relative z-10 max-w-screen-xl mx-auto px-4 md:text-center md:px-8">
+      <div className="relative z-10 max-w-screen-xl mx-auto px-4 md:text-center md:px-8 md:mb-32 mb-20">
         <div className="max-w-xl mx-auto text-center">
           <p className="font-bold text-4xl sm:text-2xl">
             Check how much you can earn
@@ -15,12 +15,12 @@ function Rate() {
         </div>
       </div>
 
-      <div className="right-0 left-0 -bottom-96 rounded-xl mx-auto overflow-hidden max-w-2xl">
-        <form className="bg-[#FBFCFE] flex flex-col md:flex-row justify-between p-4">
+      <div className="z-10 right-0 left-0 -bottom-40 rounded-xl mx-4 md:absolute md:mx-auto overflow-hidden max-w-2xl shadow-lg">
+        <form className="bg-[#FBFCFE] flex flex-col md:flex-row justify-between p-10">
           <div className="flex flex-col md:flex-row flex-1 justify-between gap-8">
             <div className="relative z-0 mb-6 md:w-2/3">
               <input
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600"
+                className="block py-2.5 px-0 w-full text-sm placeholder:text-xl text:xl placeholder:text-primary text-primary bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600"
                 placeholder="Enter your hash rate"
                 required
               />
@@ -28,7 +28,7 @@ function Rate() {
             <div className="relative z-0 mb-6 md:w-1/3">
               <select
                 id="rates"
-                className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600"
+                className="block py-2.5 px-0 w-full text-xl text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 focus:outline-none focus:ring-0 focus:border-blue-600"
               >
                 <option>TH/s</option>
                 <option>GH/s</option>
@@ -43,7 +43,7 @@ function Rate() {
           </div>
         </form>
 
-        <div className="bg-white p-4">
+        <div className="bg-white p-10">
           <div className="text-[#3671E9] font-medium">
             ESTIMATED 24 HOUR REVENUE:
           </div>

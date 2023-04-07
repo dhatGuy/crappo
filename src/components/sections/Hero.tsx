@@ -7,7 +7,7 @@ function Hero() {
     <div>
       <Navbar />
       <section className="relative overflow-hidden">
-        <div className="max-w-screen-xl mx-auto px-4 py-28 gap-12 overflow-hidden md:px-8 md:flex">
+        <div className="max-w-screen-xl mx-auto px-4 py-20 gap-12 overflow-hidden md:px-8 md:flex">
           <div className="flex-none space-y-5 max-w-xl">
             <a
               href="#"

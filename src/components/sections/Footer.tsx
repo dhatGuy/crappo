@@ -172,7 +172,7 @@ function Footer() {
       <div className="">
         <div className="mx-auto max-w-screen-2xl px-4 md:px-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-8">
-            <span className="text-sm text-gray-400">
+            <span className="text-white">
               &copy; {new Date().getFullYear()} CRAPPO. All rights reserved
             </span>
 

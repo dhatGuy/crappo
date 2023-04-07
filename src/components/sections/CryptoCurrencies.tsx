@@ -26,9 +26,9 @@ const currencies = [
 
 function CryptoCurrencies() {
   return (
-    <section className="bg-white">
+    <section className="bg-white md:pt-48">
       <div>
-        <h2 className="md:text-[40px] text-2xl md:leading-[60px] text-primary py-20 font-bold max-w-2xl text-center mx-auto">
+        <h2 className="md:text-[40px] text-3xl md:leading-[60px] text-primary py-20 font-bold max-w-2xl text-center mx-auto px-4">
           Trade securely and market the high growth cryptocurrencies.
         </h2>
       </div>
