@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Bar, BtcIllustration } from "~/assets";
 import Button from "../Button";
 import Navbar from "../Navbar";
@@ -8,7 +11,12 @@ function Hero() {
       <Navbar />
       <section className="relative overflow-hidden">
         <div className="max-w-screen-xl mx-auto px-4 py-20 gap-12 overflow-hidden md:px-8 md:flex">
-          <div className="flex-none space-y-5 max-w-xl">
+          <motion.div
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex-none space-y-5 max-w-xl"
+          >
             <a
               href="#"
               className="inline-flex gap-x-6 items-center rounded-full p-1 pr-6 bg-[#252540]"
@@ -22,7 +30,7 @@ function Hero() {
             <h1 className="text-4xl font-extrabold sm:text-5xl">
               Fastest & secure platform to invest in crypto
             </h1>
-            <p>
+            <p className="max-w-sm">
               Buy and sell cryptocurrencies, trusted by 10M wallets with over
               $30 billion in transactions.
             </p>
@@ -44,10 +52,15 @@ function Hero() {
                 </svg>
               </Button>
             </div>
-          </div>
-          <div className="hidden w-1/2 lg:block">
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            className="hidden w-1/2 lg:block"
+          >
             <BtcIllustration />
-          </div>
+          </motion.div>
         </div>
         <div className="hidden md:block">
           <Bar className="absolute bottom-0 left-96" />

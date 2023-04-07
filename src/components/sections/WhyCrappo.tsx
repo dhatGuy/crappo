@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { BarChart, Earth, EthIllustration, Person } from "~/assets";
 import Button from "../Button";
 
@@ -25,8 +28,14 @@ function WhyCrappo() {
       <section className="relative overflow-hidden">
         <div className="container px-6 py-12 mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {numbers.map(({ icon: Icon, ...number }) => (
-              <div className="flex gap-8 items-center" key={number.title}>
+            {numbers.map(({ icon: Icon, ...number }, id) => (
+              <motion.div
+                className="flex gap-8 items-center"
+                key={number.title}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: id * 0.2 }}
+              >
                 <Icon />
 
                 <div>
@@ -34,7 +43,7 @@ function WhyCrappo() {
 
                   <p className="mt-2 text-[#E0E0E0]">{number.description}</p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

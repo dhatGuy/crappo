@@ -1,14 +1,35 @@
 "use client";
 
-import { useState } from "react";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Logo } from "~/assets";
 import Button from "./Button";
 
-// Replace javascript:void(0) paths with your paths
 const navigation = ["Products", "Features", "About", "Contact"];
+
+const variants = {
+  open: {
+    opacity: 1,
+    x: 0,
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    opacity: 0,
+    x: "100%",
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
 
 const Navbar = () => {
   const [state, setState] = useState(false);
+
+  useEffect(() => {
+    if (state) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [state]);
 
   return (
     <nav className="w-full">
@@ -52,34 +73,37 @@ const Navbar = () => {
             </button>
           </div>
         </div>
-        <div
-          className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 absolute bg-primary z-20 right-0 left-0 px-4 md:px-0 md:static ${
-            state ? "block" : "hidden"
+        <motion.div
+          variants={variants}
+          animate={state ? "open" : "closed"}
+          initial={false}
+          className={`flex-1 pb-3 mt-8 md:block md:pb-0 md:mt-0 absolute md:min-h-fit min-h-screen bg-primary z-20 right-0 left-0 px-4 md:px-0 md:static ${
+            state ? "block " : "hidden"
           }`}
         >
-          <ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
+          <motion.ul className="justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0">
             {navigation.map((item, idx) => {
               return (
-                <li key={idx}>
+                <motion.li key={idx} whileHover={{ scale: 1.1 }}>
                   <a href="#" className="block">
                     {item}
                   </a>
-                </li>
+                </motion.li>
               );
             })}
             <ul className="space-y-3 items-center gap-x-6 md:pl-6 md:flex md:space-y-0">
-              <li>
+              <motion.li whileHover={{ scale: 1.1 }}>
                 <a href="#" className="block text-center font-medium">
                   Log in
                 </a>
-              </li>
+              </motion.li>
               <span className="hidden w-px h-6 bg-[#525267] md:block"></span>
-              <li>
+              <motion.li whileHover={{ scale: 1.1 }}>
                 <Button className="w-full rounded-full py-3.5">Register</Button>
-              </li>
+              </motion.li>
             </ul>
-          </ul>
-        </div>
+          </motion.ul>
+        </motion.div>
       </div>
     </nav>
   );

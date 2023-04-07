@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { BtcStats, DetailedStats, ProfitTable } from "~/assets";
 import Button from "../Button";
 
@@ -33,7 +36,7 @@ function Features() {
 
         <div className="space-y-28">
           {features.map(({ Img, ...feature }, index) => (
-            <div
+            <motion.div
               key={index}
               className={`flex flex-col md:flex-row gap-16 px-4 ${
                 index === 1
@@ -41,15 +44,25 @@ function Features() {
                   : "md:px-28"
               }`}
             >
-              <div className="space-y-4 md:w-1/2">
+              <motion.div
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 100 }}
+                transition={{ duration: 0.5, delay: index * 0.2 }}
+                className="space-y-4 md:w-1/2"
+              >
                 <h2 className="font-bold text-3xl">{feature.title}</h2>
                 <p className="text-[#E0E0E0] max-w-sm">{feature.description}</p>
                 <Button>Learn More</Button>
-              </div>
-              <div className="md:w-1/2">
+              </motion.div>
+              <motion.div
+                className="md:w-1/2"
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 100 }}
+                transition={{ duration: 0.5, delay: index * 0.3 }}
+              >
                 <Img />
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           ))}
         </div>
       </div>

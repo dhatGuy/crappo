@@ -1,4 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Bitcoin, Ethereum, LiteCoin } from "~/assets";
+import Button from "../Button";
 
 const currencies = [
   {
@@ -36,30 +40,52 @@ function CryptoCurrencies() {
       <div>
         <div className="relative items-center w-full px-5 py-12 mx-auto md:px-12 lg:px-24 max-w-7xl">
           <div className="grid w-full grid-cols-1 gap-12 mx-auto lg:grid-cols-3 justify-items-center">
-            {currencies.map(({ icon: Icon, ...currency }) => (
-              <div
-                className="p-6 flex flex-col justify-center text-center max-w-sm gap-8"
+            {currencies.map(({ icon: Icon, ...currency }, i) => (
+              <motion.div
+                className="p-6 flex flex-col justify-center text-center max-w-sm gap-8 group rounded-xl hover:shadow-xl hover:bg-[#2B076E] hover:scale-105 transform transition-all duration-300 ease-in-out"
                 key={currency.name}
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
               >
                 <div className="inline-flex items-center justify-center flex-shrink-0">
                   <Icon />
                 </div>
                 <div className="flex flex-col justify-center items-center gap-5">
-                  <h1 className="text-3xl font-bold leading-none tracking-tighter text-primary lg:text-3xl">
+                  <h1 className="text-3xl font-bold leading-none tracking-tighter text-primary group-hover:text-white lg:text-3xl">
                     {currency.name}{" "}
                     <span className="font-medium text-lg text-[#BDBDBD]">
                       {currency.short}
                     </span>
                   </h1>
-                  <p className="text-base leading-relaxed text-[#828282]">
+                  <p className="text-base leading-relaxed text-[#828282] group-hover:text-white">
                     {currency.description}
                   </p>
+
+                  <Button className="hidden py-3 group-hover:flex items-center gap-x-2">
+                    Start mining{" "}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      fill="none"
+                      viewBox="0 0 32 32"
+                    >
+                      <circle cx="16" cy="16" r="16" fill="#fff"></circle>
+                      <path
+                        fill="#3671E9"
+                        d="M14.5 21a.998.998 0 01-.71-1.71L17.1 16l-3.18-3.31a1 1 0 111.42-1.41l3.86 4a1 1 0 010 1.4l-4 4a1 1 0 01-.7.32z"
+                      ></path>
+                    </svg>
+                  </Button>
+
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="64"
                     height="64"
                     fill="none"
                     viewBox="0 0 64 64"
+                    className="group-hover:hidden"
                   >
                     <circle
                       cx="32"
@@ -75,7 +101,7 @@ function CryptoCurrencies() {
                     ></path>
                   </svg>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
