@@ -22,7 +22,7 @@ const numbers = [
 function WhyCrappo() {
   return (
     <div>
-      <section className="relative">
+      <section className="relative overflow-hidden">
         <div className="container px-6 py-12 mx-auto">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {numbers.map(({ icon: Icon, ...number }) => (
