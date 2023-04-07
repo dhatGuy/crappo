@@ -1,5 +1,7 @@
 import { Inter, Rubik } from "next/font/google";
+import CryptoCurrencies from "~/components/sections/CryptoCurrencies";
 import Hero from "~/components/sections/Hero";
+import Rate from "~/components/sections/Rate";
 import WhyCrappo from "~/components/sections/WhyCrappo";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -11,6 +13,8 @@ export default function Home() {
     <main className="min-h-screen">
       <Hero />
       <WhyCrappo />
+      <Rate />
+      <CryptoCurrencies />
     </main>
   );
 }
