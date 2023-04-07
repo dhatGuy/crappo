@@ -37,7 +37,7 @@ function Features() {
               key={index}
               className={`flex flex-col md:flex-row gap-16 px-4 ${
                 index === 1
-                  ? "md:flex-row-reverse md:px-0 items-center"
+                  ? "md:flex-row-reverse md:px-0 md:items-center"
                   : "md:px-28"
               }`}
             >
