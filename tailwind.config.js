@@ -11,8 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        mono: ["Inter", ...defaultTheme.fontFamily.mono],
-        sans: ["Rubik", ...defaultTheme.fontFamily.sans],
+        mono: ["var(--font-inter)", ...defaultTheme.fontFamily.mono],
+        sans: ["var(--font-rubik)", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: {
