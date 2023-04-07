@@ -3,7 +3,7 @@ import Button from "../Button";
 
 function CTA() {
   return (
-    <section className="py-10 px-12">
+    <section className="py-10 px-10 md:px-16 bg-gradient-to-b from-[#2B076E] to-primary">
       <div className="p-10 my-10 mx-auto lg:flex lg:items-center lg:justify-between gap-x-20 bg-[#3671E9] rounded-lg relative overflow-hidden">
         <div className="flex flex-col">
           <h2 className="text-2xl font-bold tracking-tight xl:text-3xl text-white">
