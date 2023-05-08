@@ -9,13 +9,13 @@ const navigation = ["Products", "Features", "About", "Contact"];
 
 const variants = {
   open: {
-    opacity: 1,
-    x: 0,
+    // opacity: 1,
+    // x: 0,
     transition: { staggerChildren: 0.07, delayChildren: 0.2 },
   },
   closed: {
-    opacity: 0,
-    x: "100%",
+    // opacity: 0,
+    // x: "100%",
     transition: { staggerChildren: 0.05, staggerDirection: -1 },
   },
 };
@@ -25,10 +25,11 @@ const Navbar = () => {
 
   useEffect(() => {
     if (state) {
-      document.body.style.overflow = "hidden";
+      // document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      // document.body.style.overflow = "auto";
     }
+    console.log(state);
   }, [state]);
 
   return (

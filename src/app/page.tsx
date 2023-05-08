@@ -1,5 +1,5 @@
-import CTA from "~/components/sections/CTA";
 import CryptoCurrencies from "~/components/sections/CryptoCurrencies";
+import CTA from "~/components/sections/CTA";
 import Features from "~/components/sections/Features";
 import Footer from "~/components/sections/Footer";
 import Hero from "~/components/sections/Hero";
